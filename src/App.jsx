@@ -1,3 +1,21 @@
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import SavedNews from './pages/SavedNews';
+import './App.css';
+
+function App() {
+  return (
+    <div className='page'>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/saved-news' element={<SavedNews />} />
+      </Routes>
+    </div>
+  );
+}
+
+export default App;
+/** 
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
@@ -119,3 +137,4 @@ function App() {
 }
 
 export default App
+**/
