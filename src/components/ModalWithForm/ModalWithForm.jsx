@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import closeIcon from '../../assets/close.svg';
 import './ModalWithForm.css';
 
 function ModalWithForm({
@@ -46,9 +47,9 @@ function ModalWithForm({
           type="button"
           className="modal__close"
           onClick={onClose}
-          aria-label="Close login form"
+          aria-label="Close modal"
         >
-          ×
+          <img src={closeIcon} alt='' className='modal__close-icon' />
         </button>
 
         <h2 className="modal__title">{title}</h2>

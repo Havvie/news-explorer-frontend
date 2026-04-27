@@ -5,7 +5,7 @@ import NewsCardList from '../components/NewsCardList/NewsCardList';
 import { savedArticles } from '../utils/constants';
 import './SavedNews.css';
 
-function SavedNews() {
+function SavedNews({ onLogout }) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     return(
         <>
@@ -13,6 +13,7 @@ function SavedNews() {
             theme='light' 
             showSavedLink 
             showUser
+            onLogout={onLogout}
             isMobileMenuOpen={isMobileMenuOpen}
             onMobileMenuOpen={() => setIsMobileMenuOpen(true)}
             onMobileMenuClose={() => setIsMobileMenuOpen(false)} 

@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
-import './LoginModal.css';
 
-function LoginModal({ isOpen, onClose, onSwitchToRegister }) {
+function LoginModal({ isOpen, onClose, onSwitchToRegister, onLoginSuccess }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -56,7 +55,7 @@ function LoginModal({ isOpen, onClose, onSwitchToRegister }) {
       return;
     }
 
-    console.log('Sign in submitted:', { email, password });
+    onLoginSuccess();
   };
 
   return (

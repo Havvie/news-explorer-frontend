@@ -14,7 +14,7 @@ function NewsCard({
   const [isHovered, setIsHovered] = useState(false);
 
   const isSaved = savedArticles.some(
-    (savedArticle) => savedArticles.url === article.url
+    (savedArticle) => savedArticle.url === article.url
   );
 
   const handleSaveClick = () => {

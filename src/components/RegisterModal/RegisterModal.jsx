@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
-import './RegisterModal.css';
 
-function RegisterModal({ isOpen, onClose, onSwitchToLogin }) {
+function RegisterModal({ isOpen, onClose, onSwitchToLogin, onRegisterSuccess }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
@@ -74,7 +73,15 @@ function RegisterModal({ isOpen, onClose, onSwitchToLogin }) {
       return;
     }
 
-    console.log('Register submitted:', { email, password, username });
+    setEmail('');
+    setPassword('');
+    setUsername('');
+    setEmailError('');
+    setPasswordError('');
+    setUsernameError('');
+    setIsValid(false);
+
+    onRegisterSuccess();
   };
 
   return (
@@ -84,6 +91,7 @@ function RegisterModal({ isOpen, onClose, onSwitchToLogin }) {
       isOpen={isOpen}
       onClose={onClose}
       isValid={isValid}
+      buttonText="Sign up"
       footerText="or"
       footerLinkText="Sign in"
       onFooterLinkClick={onSwitchToLogin}

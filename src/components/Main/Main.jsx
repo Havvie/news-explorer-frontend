@@ -34,17 +34,21 @@ function Main({
       {hasSearched && (
         <section className="main__results">
           <div className="main__results-content">
-            <h2 className="main__results-title">Search results</h2>
-
             {isLoading ? (
               <Preloader />
             ) : errorMessage ? (
               <p className="main__message">{errorMessage}</p>
             ) : articles.length === 0 ? (
-              <p className="main__message">Nothing found</p>
+              <div className="main__nothing-found">
+                <h2 className="main__nothing-title">Nothing found</h2>
+                <p className="main__nothing-text">
+                  Sorry, but nothing matched your search terms.
+                </p>
+              </div>
             ) : (
               <>
-                <NewsCardList 
+                <h2 className="main__results-title">Search results</h2>
+                <NewsCardList
                   articles={visibleArticles}
                   isLoggedIn={isLoggedIn}
                   savedArticles={savedArticles}
@@ -53,8 +57,8 @@ function Main({
                 />
 
                 {visibleCards < articles.length && (
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     className="main__show-more"
                     onClick={onShowMore}
                   >

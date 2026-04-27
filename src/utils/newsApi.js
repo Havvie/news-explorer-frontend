@@ -1,5 +1,5 @@
 const NEWS_API_BASE_URL = import.meta.env.PROD
-    ? 'https://nomoreparties.co/news/vv2/everything'
+    ? 'https://nomoreparties.co/news/v2/everything'
     : 'https://newsapi.org/v2/everything';
 
 const NEWS_API_KEY = import.meta.env.VITE_NEWS_API_KEY;
@@ -23,7 +23,7 @@ function checkResponse(res) {
 }
 
 export function getNews(keyword) {
-    const from = getSevenDaysAgoDate;
+    const from = getSevenDaysAgoDate();
     const to = getTodaysDate();
 
     const url = new URL(NEWS_API_BASE_URL);

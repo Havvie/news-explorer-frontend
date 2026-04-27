@@ -5,6 +5,7 @@ import About from '../components/About/About';
 import Footer from '../components/Footer/Footer';
 import LoginModal from '../components/LoginModal/LoginModal';
 import RegisterModal from '../components/RegisterModal/RegisterModal';
+import SuccessModal from '../components/SuccessModal/SuccessModal';
 import { getNews } from '../utils/newsApi';
 
 function Home() {
@@ -34,6 +35,10 @@ function Home() {
 
   const handleOpenRegister = () => {
     setActiveModal('register');
+  };
+
+  const handleRegisterSuccess = () => {
+    setActiveModal('success');
   };
 
   const handleCloseModal = () => {
@@ -99,7 +104,9 @@ function Home() {
         );
       })
       .finally(() => {
-        setIsLoading(false);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 1000);
       });
   };
 
@@ -165,6 +172,13 @@ function Home() {
 
       <RegisterModal
         isOpen={activeModal === 'register'}
+        onClose={handleCloseModal}
+        onSwitchToLogin={handleOpenLogin}
+        onRegisterSuccess={handleRegisterSuccess}
+      />
+
+      <SuccessModal
+        isOpen={activeModal === 'success'}
         onClose={handleCloseModal}
         onSwitchToLogin={handleOpenLogin}
       />

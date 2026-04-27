@@ -1,137 +1,158 @@
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-.modal__opened {
-    display: flex;
+.modal_opened {
+  display: flex;
 }
 
 .modal__container {
-    width: 430px;
-    background: #fff;
-    border-radius: 16px;
-    padding: 34px 36px 28px;
-    position: relative;
-    box-sizing: border-box;
+  width: 430px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 34px 36px 28px;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .modal__close {
-    position: absolute;
-    top: -40px;
-    right: -40px;
-    border: none;
-    background: transparent;
-    color: #fff;
-    font-size: 40px;
-    line-height: 1;
-    cursor: pointer;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.modal__close-icon {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
 }
 
 .modal__title {
-    margin: 0 0 22px;
-    font-size: 24px;
-    line-height: 28px;
-    font-weight: 700;
-    color: #1a1b22;
+  margin: 0 0 22px;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  color: #1a1b22;
 }
 
 .modal__form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal__label {
-    margin: 0 0 8px;
-    font-size: 12px;
-    line-height: 15px;
-    color: #2f71e5;
+  margin: 0 0 8px;
+  font-size: 12px;
+  line-height: 15px;
+  color: #2f71e5;
 }
 
 .modal__input {
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 0 0 9px;
-    margin: 0 0 24px;
-    font-size: 14px;
-    line-height: 17px;
-    outline: none;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0 0 9px;
+  margin: 0 0 24px;
+  font-size: 14px;
+  line-height: 17px;
+  outline: none;
 }
 
 .modal__input:focus {
-    border-bottom-color: #2f71e5;
+  border-bottom-color: #2f71e5;
 }
 
 .modal__error {
-    display: block;
-    margin: -16px 0 16px;
-    color: #ff4d00;
-    font-size: 12px;
-    line-height: 15px;
+  display: block;
+  margin: -16px 0 16px;
+  color: #ff4d00;
+  font-size: 12px;
+  line-height: 15px;
 }
 
 .modal__submit {
-    margin: 8px 0 0;
-    min-height: 64px;
-    border: none;
-    border-radius: 100px;
-    background-color: #e6e8eb;
-    color: #b6bcbf;
-    font-size: 18px;
-    line-height: 24px;
-    cursor: not-allowed;
+  margin: 8px 0 0;
+  min-height: 64px;
+  border: none;
+  border-radius: 100px;
+  background-color: #e6e8eb;
+  color: #b6bcbf;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: not-allowed;
 }
 
 .modal__submit_active {
-    background-color: #2f71e5;
-    color: #fff;
-    cursor: pointer;
+  background-color: #2f71e5;
+  color: #fff;
+  cursor: pointer;
 }
 
 .modal__switch {
-    margin: 16px 0 0;
-    text-align: center;
-    font-size: 14px;
-    line-height: 17px;
-    color: #000;
+  margin: 16px 0 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000;
 }
 
 .modal__switch-button {
-    border: none;
-    background: transparent;
-    color: #2f71e5;
-    cursor: pointer;
-    padding: 0;
-    font: inherit;
+  border: none;
+  background: transparent;
+  color: #2f71e5;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
 }
 
 @media screen and (max-width: 700px) {
-    .modal {
-        align-items: flex-end;
-    }
+  .modal {
+    align-items: flex-start;
+    padding-top: 56px;
+  }
 
-    .modal__container {
-        width: 100%;
-        border-radius: 16px 16px 0 0;
-        padding: 22px 16px 16px;
-    }
+  .modal__container {
+    width: calc(100% - 32px);
+    border-radius: 16px;
+    padding: 22px 16px 16px;
+  }
 
-    .modal__close {
-        top: -36px;
-        right: 16px;
-        font-size: 32px;
-    }
+  .modal__close {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    z-index: 2000;
+    display: block;
+  }
 
-    .modal__submit {
-        min-height: 56px;
-    }
+  .modal__close-icon {
+    width: 32px;
+    height: 32px;
+    display: block;
+  }
+
+  .modal__submit {
+    min-height: 56px;
+  }
 }

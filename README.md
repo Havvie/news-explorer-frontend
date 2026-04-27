@@ -1,16 +1,21 @@
-# React + Vite
+## Live Demo
+https://havvie.github.io/news-explorer-frontend/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Pitch Vieo
+https://www.loom.com/share/b19ee1e6fb1a4d46a79d8803fdc6aad3
 
-Currently, two official plugins are available:
+## Description
+News Explorer is a React application that allows users to search for news articles using a third-party API. Users can view results, load more articles, and (when logged in) save articles.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Technologies Used
+- React
+- Vite
+- React Router
+- News API
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+- Search for news articles
+- Display results dynamically
+- Show more pagination (3 at a time)
+- Error handling and loading states
+- Responsive design
